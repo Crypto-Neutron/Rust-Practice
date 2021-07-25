@@ -105,19 +105,37 @@ pub fn print_primes(max_num: i128){
     let mut i=1;
     let now = time::Instant::now();
 
-    if max_num == 1 || max_num == 2 {
-        println!("No primes");
-    } else {
-        while i < max_num{
-            if max_num % i == 0 {
-                i+=2;
-            }else{
-                println!("{}", i);
-                i+=2;
-            }
+
+    while i < max_num{
+        if is_prime(i) == true {
+             println!("{}", i);
+             i+=1;
+        }else{
+             i+=1;
         }
     }
 
     let runtime = time::Instant::now() - now;
     println!("Runtime = {:?}", runtime);
+}
+
+fn is_prime(val: i128) -> bool{
+
+    let mut i = 2;
+    let mut return_bool = true;
+     if val == 1 || val == 2 || val == 3 {
+        return_bool = true;
+     } else if val % 2 == 0 {
+          return_bool = false;
+     } else {
+         while i < val {
+             if val % i == 0 {
+                 return_bool = false;
+                 break;
+             } else {
+                 i += 1;
+             }
+         }
+     }
+    return_bool
 }
