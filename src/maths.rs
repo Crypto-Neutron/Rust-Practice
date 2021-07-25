@@ -1,5 +1,7 @@
+
 use std::io;
 use std::time;
+use chrono::prelude::*;
 
 pub fn sequence_addition(max_num: i32) -> i32 {
     let now = time::Instant::now();
@@ -138,4 +140,30 @@ fn is_prime(val: i128) -> bool{
          }
      }
     return_bool
+}
+
+pub fn print_leap_years(){
+    let mut year = Local::now().year();
+    
+    let mut printed_years = 0;
+
+    while printed_years < 20{
+        if year % 4 == 0 {
+            if year % 100 == 0 {
+                if year % 400 == 0{
+                     println!("{}", year);
+                    year += 1;
+                    printed_years += 1;
+                } else {
+                    year +=1 ;
+                }
+            } else {
+                println!("{}", year);
+                year += 1;
+                printed_years += 1;
+            }
+        } else {
+            year += 1;
+        }
+    }
 }

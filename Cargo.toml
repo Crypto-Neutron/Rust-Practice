@@ -3,3 +3,6 @@ name = "study-session"
 version = "0.1.0"
 authors = ["Crypto Neutron <crypto.neutron@gmail.com>"]
 edition = '2018'
+
+[dependencies]
+chrono = "^0.4"
