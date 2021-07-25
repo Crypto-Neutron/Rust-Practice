@@ -1,0 +1,1 @@
+C:\Users\Garrett\Documents\Rust\Study\ Session\target\debug\study-session.exe: C:\Users\Garrett\Documents\Rust\Study\ Session\src\hello_world.rs C:\Users\Garrett\Documents\Rust\Study\ Session\src\main.rs C:\Users\Garrett\Documents\Rust\Study\ Session\src\maths.rs
