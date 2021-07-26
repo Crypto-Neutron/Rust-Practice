@@ -2,6 +2,8 @@
 use std::io;
 use std::time;
 use chrono::prelude::*;
+use rand::Rng;
+use std::cmp::Ordering;
 
 pub fn sequence_addition(max_num: i32) -> i32 {
     let now = time::Instant::now();
@@ -164,6 +166,39 @@ pub fn print_leap_years(){
             }
         } else {
             year += 1;
+        }
+    }
+}
+
+pub fn guessing_game(){
+    let correct_value = rand::thread_rng().gen_range(1..1001);
+
+    //println!("Correct value {}", correct_value);
+
+    loop {
+        println!("Please input guess for the random number. Type quit to end.");
+
+        let mut guess = String::new();
+
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Failed to read input");
+
+        if guess.trim() == "quit"{
+            break;
+        }
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+
+        match guess.cmp(&correct_value){
+            Ordering::Less => println!("Too small."),
+            Ordering::Greater => println!("Too high."),
+            Ordering::Equal => {
+                println!("Right on!");
+                break;
+            }
         }
     }
 }
