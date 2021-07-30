@@ -202,3 +202,15 @@ pub fn guessing_game(){
         }
     }
 }
+
+pub fn alternating_series(max_k: u32){
+    let mut k:u32 = 1;
+    let mut series_sum:f32 = 0.;
+    while k <= max_k{
+        series_sum += (-1i32).pow(k+1) as f32 / (2 * k - 1) as f32;
+        k+=1;
+        println!("{}", series_sum);
+    }
+    series_sum = series_sum * 4.;
+    println!("Sum of the alternating series is: {}",series_sum );
+}
