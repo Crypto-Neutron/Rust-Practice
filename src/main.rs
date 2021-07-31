@@ -2,8 +2,12 @@ mod elementary;
 mod lists_strings;
 
 fn main() {
-    let mut v = vec![-1,-100,-129,-1003];
-    lists_strings::lists::reverse_list(&mut v);
-    println!("Borrowing check {:?}", v);
+    
+    let palindrome_test = String::from("nurses run");
+
+    let is_pal = lists_strings::strings::is_palindrome(&palindrome_test);
+
+    println!("Is {} a palindrome? {} ", palindrome_test, is_pal );
 
 }
+
