@@ -4,9 +4,9 @@ mod lists_strings;
 fn main() {
     
     let v = &mut vec![1,2,3];
-    let w =  vec![100,200,300];
+    let w = &mut vec![100,200,300];
 
-    let square_vec = lists_strings::lists::concatinate_lists(&mut &w, v);
+    let square_vec = lists_strings::lists::concatinate_lists(w, v);
 
     println!("vector: {:#?}", v);
     println!("vector concatinated: {:#?} ", square_vec);
