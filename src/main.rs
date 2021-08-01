@@ -3,11 +3,25 @@ mod lists_strings;
 
 fn main() {
     
-    let palindrome_test = String::from("nurses run");
+    let v = &mut vec![1,2,3];
+    let w =  vec![100,200,300];
 
-    let is_pal = lists_strings::strings::is_palindrome(&palindrome_test);
+    let square_vec = lists_strings::lists::concatinate_lists(&mut &w, v);
 
-    println!("Is {} a palindrome? {} ", palindrome_test, is_pal );
+    println!("vector: {:#?}", v);
+    println!("vector concatinated: {:#?} ", square_vec);
 
 }
 
+
+fn square(x: &f32) -> f32{
+    let y = x * x;
+    y 
+}
+
+fn quadratic(x: &f32) -> f32{
+    let m = 1.254;
+    let b = 12.;
+    let y = m * x + b;
+    y
+}
