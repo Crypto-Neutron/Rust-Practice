@@ -95,7 +95,71 @@ pub fn concatinate_lists<T>(list1: &mut Vec<T>, list2: &mut Vec<T>) -> Vec<T>{
     final_vec
 }
 
+/** 
+pub fn zip_lists<T>(list1: &Vec<T>, list2: &Vec<T>) -> Vec<T>{
 
+    let mut final_vec = Vec::new();
+
+    let mut i = 0;
+
+    while i < list1.len()-1 && i < list2.len(){
+
+        if i < list1.len(){
+            final_vec.push(&list1[i]);
+        }
+        if i < list2.len(){
+            final_vec.push(&list2[i]);
+        }
+        i +=1;
+
+    } 
+    final_vec
+}
+*/
+
+pub fn list_rotation<T>(k: i32, list: &mut Vec<T>){
+
+    if k > 0{
+        list.rotate_right(k as usize);
+    } else {
+        list.rotate_left((k*-1) as usize);
+    }
+
+}
+
+pub fn fibonacci_list(k: i32) -> Vec<i32>{
+
+    let mut i = 1;
+    let mut final_vec = Vec::new();
+
+    while i <= k{
+        if i == 1 || i == 2{
+            final_vec.push(1);
+        } else {
+            final_vec.push(final_vec[(i-3) as usize]+final_vec[(i-2) as usize]);
+        }
+        i += 1;
+    }
+    final_vec
+
+}
+
+
+pub fn list_to_number(list: Vec<u32>) -> u32{
+
+    let mut i = 0;
+    let len = (list.len()-1) as u32;
+    let mut final_val = 0;
+
+    while i < list.len(){
+        final_val = final_val + (10u32).pow(len-i as u32) * list[i];
+        i += 1;
+    }
+    final_val
+
+}
+
+pub fn 
 
 fn square(x: &f32) -> f32{
     let y = x * x;
